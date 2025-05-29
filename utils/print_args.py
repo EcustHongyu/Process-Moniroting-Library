@@ -1,0 +1,12 @@
+def print_args(args):
+    print('\033[1m' + 'Model Parameters' + '\033[0m')
+    print(f'{"Encoder Input:":<20}{args.enc_in:<20}{"Decoder Input:":<20}{args.dec_in:<20}')
+    print(f'{"Channel Output:":<20}{args.c_out:<20}{"Dimension of Model:":<20}{args.d_model:<20}')
+    print(f'{"Number of Heads:":<20}{args.n_heads:<20}{"Encoder Layers:":<20}{args.e_layers:<20}')
+    print(f'{"Decoder Layers:":<20}{args.d_layers:<20}{"Dropout Rate:":<20}{args.dropout:<20}')
+    print()
+    print('\033[1m' + 'Running Parameters' + '\033[0m')
+    print(f'{"Number Workers:":<20}{args.num_workers:<20}{"Training Epochs:":<20}{args.train_epochs:<20}')
+    print(f'{"Patience:":<20}{args.patience:<20}{"Batch Size:":<20}{args.batch_size:<20}')
+    print(f'{"LR:":<20}{args.learning_rate:<20}')
+    print()
