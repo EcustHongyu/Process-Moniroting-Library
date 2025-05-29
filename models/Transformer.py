@@ -36,8 +36,7 @@ class Model(nn.Module):
             norm_layer = nn.LayerNorm(configs.d_model)
         )
         # Decoder
-        if self.task_name == 'fault_detection':
-            self.projection = nn.Linear(configs.d_model, configs.c_out, bias=True)
+        self.projection = nn.Linear(configs.d_model, configs.c_out, bias=True)
 
     def fault_detection(self, x_enc):
         # Embedding
@@ -48,7 +47,5 @@ class Model(nn.Module):
         return dec_out
 
     def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, mask=None):
-        if self.task_name == 'fault_detection':
-            return self.fault_detection(x_enc)
-        return None
+        return self.fault_detection(x_enc)
         
